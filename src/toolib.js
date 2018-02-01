@@ -1,18 +1,25 @@
-//将url参数转换为键值对
-import getUrlparam from "./queryUrlParam.js";
-//改变按钮状态
-const changeBtn = require("./changeBtnStatus.js");
-//date原型拓展
-require('./onlyMis.js');
-require('./onlyYmd.js');
-//快速ajax
-const quickAjax = require('./quickAjax.js');
+const getUrlparam = require("./queryUrlParam.js");//将url参数转换为键值对
+const changeBtn = require("./changeBtnStatus.js");//改变按钮状态
+const quickAjax = require('./quickAjax');//快速ajax
+const Ajax = require('./ajax');//原生ajax
 
+/************非Toolib类********/
+//date原型拓展
+require('./onlyMis');
+require('./onlyYmd');
+
+/**********绑定全局对象************/
 (function(window){
-	var toolib = {
+	setTimeout(function(){
+		if(window.jQuery||window.Zepto){
+			require('./setjQFn');
+		}
+	},100);
+	const toolib = {
 		getUrlparam:getUrlparam,
 		changeBtn:changeBtn,
-		quickAjax:quickAjax
+		quickAjax:quickAjax,
+		ajax:Ajax,
 	}
 	window.toolib = toolib;
 })(window)

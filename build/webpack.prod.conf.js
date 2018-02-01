@@ -6,9 +6,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const webpackProdConf = webpackMerge(baseWebpackConf,{
 	output:{
-		path:path.resolve(__dirname,'..'),
-		filename:'dist/toolib.min.js',
-		publicPath:'/',
+		path:path.resolve(__dirname,'../dist'),
+		filename:'toolib.min.js',
+		publicPath:'',
 		// chunkFilename: '[name][hash].js'
 	},
 	plugins:[

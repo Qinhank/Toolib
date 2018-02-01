@@ -47,17 +47,7 @@
 			}
 
 			callback(status,bg,text);
-			
 		})(options.element,options.status,options.background,options.text,options.callback);
-	}
-
-	if(window.jQuery||window.Zepto){
-		$.fn.changeBtnStatus = function(status,text,bg){
-			this.attr('disabled',status||true);
-			this.text(text||'生效中...');
-			this.attr('value',text||'生效中...');
-			this.css('background',bg||'buttonface');
-		}
 	}
 
 module.exports = changeBtnStatus;
