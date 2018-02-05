@@ -2,6 +2,7 @@ const getUrlparam = require("./queryUrlParam.js");//将url参数转换为键值�
 const changeBtn = require("./changeBtnStatus.js");//改变按钮状态
 const quickAjax = require('./quickAjax');//快速ajax
 const Ajax = require('./ajax');//原生ajax
+const randomStr = require('./randomStr');//获取指定随机数
 
 /************非Toolib类********/
 //date原型拓展
@@ -20,6 +21,7 @@ require('./onlyYmd');
 		changeBtn:changeBtn,
 		quickAjax:quickAjax,
 		ajax:Ajax,
+		randomStr:randomStr
 	}
 	window.toolib = toolib;
 })(window)
