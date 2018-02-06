@@ -3,7 +3,7 @@ const changeBtn = require("./changeBtnStatus.js");//改变按钮状态
 const quickAjax = require('./quickAjax');//快速ajax
 const Ajax = require('./ajax');//原生ajax
 const randomStr = require('./randomStr');//获取指定随机数
-
+const Event = require('./Event');//发布订阅模式
 /************非Toolib类********/
 //date原型拓展
 require('./onlyMis');
@@ -21,7 +21,8 @@ require('./onlyYmd');
 		changeBtn:changeBtn,
 		quickAjax:quickAjax,
 		ajax:Ajax,
-		randomStr:randomStr
+		randomStr:randomStr,
+		Event:Event,
 	}
 	window.toolib = toolib;
 })(window)

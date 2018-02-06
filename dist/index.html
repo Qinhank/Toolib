@@ -1,8 +1,40 @@
-<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><title>Toolib</title></head><body><input type=button value="click me"><script type=text/javascript src=toolib.min.js></script></body><script src=http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js></script><script type=text/javascript>toolib.ajax({
+<!DOCTYPE html>
+<html lang=en>
+<head>
+	<meta charset=UTF-8>
+	<title>Toolib</title>
+</head>
+<body>
+	<input type=button value="click me">
+<script type=text/javascript src=toolib.min.js></script></body>
+<script src=http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js></script>
+<script type=text/javascript>
+	var getProSuccess = 'getProSuccess',Et = toolib.Event;
+	Et.listen(getProSuccess,function(e,num){
+		for(let i=0;i<e.data.length;i++){
+			num++;
+			// console.log(e.data[i],num);
+		}
+	})
+	Et.listen(getProSuccess,function(e,num,fn){
+		var data = {data:5}
+		fn.call(this,data);
+	})
+	Et.remove(getProSuccess)
+	Et.listen(getProSuccess,function(e,num){
+		num--;
+		console.log(num);
+	})
+</script>
+<script type=text/javascript>
+	toolib.ajax({
 		url:'http://202.103.67.144/admin.php/api/New_product/getProduct_admin',
 		data:{destination:'thailand'},
 		success:function(e){
-			console.log(e)
+			Et.trigger(getProSuccess,e,6,function(e){
+				console.log(e.data);
+			})
 		}
 	});
-	$("input[type='button']").changeBtnStatus();</script></html>
+</script>
+</html>

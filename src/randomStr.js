@@ -6,7 +6,7 @@
 function randomStr(num,unique){
 	var str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	var randomStr = '';
-	var num = num ||5;
+	var num = num || 5;
 	var unique = unique || false;
 	for(let i=0;i<num;i++){
 		var number = parseInt(Math.random()*str.length);
@@ -16,9 +16,7 @@ function randomStr(num,unique){
 				console.error('唯一字符串不能大于52个字符');
 				return;
 			}
-			var strArr = str.split("");
-			strArr.splice(number,1);
-			str = strArr.join("");
+			str.replace(str[number],'');
 		}
 	}
 	return randomStr;

@@ -27,7 +27,7 @@ const webpackProdConf = webpackMerge(baseWebpackConf,{
 		    // hash:true,
 		    minify: {
 		      removeComments: true,
-		      collapseWhitespace: true,
+		      collapseWhitespace: false,
 		      removeAttributeQuotes: true
 		      // more options:
 		      // https://github.com/kangax/html-minifier#options-quick-reference
